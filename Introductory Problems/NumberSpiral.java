@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class NumberSpiral {
 	public static void main(String[] args) throws IOException {
@@ -9,8 +9,9 @@ public class NumberSpiral {
 		int t = Integer.parseInt(br.readLine());
 		StringBuilder sb = new StringBuilder();
 		while (t-- > 0) {
-			int[] input = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-			int y = input[0], x = input[1];
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			int y = Integer.parseInt(st.nextToken());
+			int x = Integer.parseInt(st.nextToken());
 			long max = Math.max(y, x);
 			long square = (max - 1) * (max - 1);
 			if (max % 2 == 0) {
