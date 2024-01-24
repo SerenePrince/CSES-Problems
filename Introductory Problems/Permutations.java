@@ -21,6 +21,6 @@ public class Permutations {
 		for (int i = 1; i <= n; i += 2) {
 			sb.append(i + " ");
 		}
-		System.out.println(sb.toString());
+		System.out.println(sb);
 	}
 }
