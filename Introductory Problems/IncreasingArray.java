@@ -7,10 +7,10 @@ public class IncreasingArray {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
-		int[] input = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-		long previous = input[0], current, moves = 0;
+		int[] x = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+		long previous = x[0], current, moves = 0;
 		for (int i = 1; i < n; i++) {
-			current = input[i];
+			current = x[i];
 			moves += ((previous - current) > 0 ? (previous - current) : 0);
 			previous = Math.max(previous, current);
 		}

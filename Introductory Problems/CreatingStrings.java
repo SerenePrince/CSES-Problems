@@ -10,8 +10,8 @@ public class CreatingStrings {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String s = br.readLine();
-		permutations("", s);
+		String n = br.readLine();
+		permutations("", n);
 		System.out.println(permutations.size());
 		for (String str : permutations) {
 			System.out.println(str);

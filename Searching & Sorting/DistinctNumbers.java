@@ -9,9 +9,9 @@ public class DistinctNumbers {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
-		int[] input = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+		int[] x = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 		Set<Integer> set = new HashSet<>();
-		for (int num : input) {
+		for (int num : x) {
 			set.add(num);
 		}
 		System.out.println(set.size());

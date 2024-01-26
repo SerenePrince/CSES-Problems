@@ -5,9 +5,9 @@ import java.io.InputStreamReader;
 public class PalindromeReorder {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		char[] letters = br.readLine().toCharArray();
+		char[] n = br.readLine().toCharArray();
 		int[] count = new int[26];
-		for (char c : letters) {
+		for (char c : n) {
 			if (Character.isLetter(c)) {
 				count[Character.toUpperCase(c) - 'A']++;
 			}
