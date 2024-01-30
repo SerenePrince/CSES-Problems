@@ -1,48 +1,3 @@
-import java.io.DataInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Map;
-import java.util.NavigableMap;
-import java.util.TreeMap;
-
-public class ConcertTickets {
-	public static void main(String[] args) throws IOException {
-		Reader reader = new Reader();
-		PrintWriter pw = new PrintWriter(System.out);
-		int n = reader.nextInt();
-		int m = reader.nextInt();
-		NavigableMap<Integer, Integer> ticketSet = new TreeMap<>();
-		Map.Entry<Integer, Integer> value;
-
-		for (int i = 0; i < n; i++) {
-			int price = reader.nextInt();
-			if (ticketSet.containsKey(price)) {
-				ticketSet.put(price, ticketSet.get(price) + 1);
-			} else {
-				ticketSet.put(price, 1);
-			}
-		}
-
-		for (int i = 0; i < m; i++) {
-			int customerPrice = reader.nextInt();
-			value = ticketSet.lowerEntry(customerPrice + 1);
-			if (value != null) {
-				pw.println(value.getKey());
-				if (value.getValue() == 1) {
-					ticketSet.remove(value.getKey());
-
-				} else {
-					ticketSet.put(value.getKey(), value.getValue() - 1);
-				}
-			} else {
-				pw.println(-1);
-			}
-		}
-		reader.close();
-		pw.close();
-	}
-
 	static class Reader {
 		final private int BUFFER_SIZE = 1 << 16;
 		private DataInputStream din;
@@ -150,4 +105,3 @@ public class ConcertTickets {
 			din.close();
 		}
 	}
-}
